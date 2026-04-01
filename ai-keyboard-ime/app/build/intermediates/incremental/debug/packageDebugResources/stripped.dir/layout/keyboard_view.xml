@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#1a1a2e">
+
+    <!-- STATE 1: Default suggestion bar -->
+    <LinearLayout
+        android:id="@+id/barDefault"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#16213e"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/wordSuggestionsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/btnAiStar"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:text="★"
+            android:textSize="22sp"
+            android:textColor="#6366f1"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- STATE 2: AI chip row -->
+    <LinearLayout
+        android:id="@+id/barChips"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:background="#16213e"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView android:id="@+id/chipGrammar"
+            style="@style/ChipStyle"
+            android:text="✨ Fix" />
+        <TextView android:id="@+id/chipProfessional"
+            style="@style/ChipStyle"
+            android:text="💼 Pro" />
+        <TextView android:id="@+id/chipCasual"
+            style="@style/ChipStyle"
+            android:text="😊 Casual" />
+        <TextView android:id="@+id/chipPolite"
+            style="@style/ChipStyle"
+            android:text="🙏 Polite" />
+        <TextView android:id="@+id/btnExitChips"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:text="✕"
+            android:textSize="16sp"
+            android:textColor="#ef4444"
+            android:gravity="center"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- STATE 3: Result bar -->
+    <LinearLayout
+        android:id="@+id/barResult"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:background="#16213e"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <TextView
+            android:id="@+id/btnResultBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="←"
+            android:textSize="18sp"
+            android:textColor="#a1a1aa"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#fafafa"
+            android:textSize="13sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp" />
+
+        <TextView
+            android:id="@+id/btnAccept"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="✓"
+            android:textSize="18sp"
+            android:textColor="#22c55e"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/btnReject"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="✕"
+            android:textSize="18sp"
+            android:textColor="#ef4444"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- KEYBOARD ROWS -->
+    <LinearLayout
+        android:id="@+id/keyboardRows"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <!-- Row 1: Q W E R T Y U I O P -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView android:id="@+id/keyQ" style="@style/KeyStyle" android:text="q" />
+            <TextView android:id="@+id/keyW" style="@style/KeyStyle" android:text="w" />
+            <TextView android:id="@+id/keyE" style="@style/KeyStyle" android:text="e" />
+            <TextView android:id="@+id/keyR" style="@style/KeyStyle" android:text="r" />
+            <TextView android:id="@+id/keyT" style="@style/KeyStyle" android:text="t" />
+            <TextView android:id="@+id/keyY" style="@style/KeyStyle" android:text="y" />
+            <TextView android:id="@+id/keyU" style="@style/KeyStyle" android:text="u" />
+            <TextView android:id="@+id/keyI" style="@style/KeyStyle" android:text="i" />
+            <TextView android:id="@+id/keyO" style="@style/KeyStyle" android:text="o" />
+            <TextView android:id="@+id/keyP" style="@style/KeyStyle" android:text="p" />
+        </LinearLayout>
+
+        <!-- Row 2: A S D F G H J K L -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView android:id="@+id/keyA" style="@style/KeyStyle" android:text="a" />
+            <TextView android:id="@+id/keyS" style="@style/KeyStyle" android:text="s" />
+            <TextView android:id="@+id/keyD" style="@style/KeyStyle" android:text="d" />
+            <TextView android:id="@+id/keyF" style="@style/KeyStyle" android:text="f" />
+            <TextView android:id="@+id/keyG" style="@style/KeyStyle" android:text="g" />
+            <TextView android:id="@+id/keyH" style="@style/KeyStyle" android:text="h" />
+            <TextView android:id="@+id/keyJ" style="@style/KeyStyle" android:text="j" />
+            <TextView android:id="@+id/keyK" style="@style/KeyStyle" android:text="k" />
+            <TextView android:id="@+id/keyL" style="@style/KeyStyle" android:text="l" />
+        </LinearLayout>
+
+        <!-- Row 3: Shift Z X C V B N M Backspace -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView android:id="@+id/keyShift"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="⇧"
+                android:textSize="18sp"
+                android:textColor="#a1a1aa"
+                android:gravity="center"
+                android:background="@drawable/key_bg"
+                android:layout_marginEnd="3dp" />
+            <TextView android:id="@+id/keyZ" style="@style/KeyStyle" android:text="z" />
+            <TextView android:id="@+id/keyX" style="@style/KeyStyle" android:text="x" />
+            <TextView android:id="@+id/keyC" style="@style/KeyStyle" android:text="c" />
+            <TextView android:id="@+id/keyV" style="@style/KeyStyle" android:text="v" />
+            <TextView android:id="@+id/keyB" style="@style/KeyStyle" android:text="b" />
+            <TextView android:id="@+id/keyN" style="@style/KeyStyle" android:text="n" />
+            <TextView android:id="@+id/keyM" style="@style/KeyStyle" android:text="m" />
+            <TextView android:id="@+id/keyBackspace"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="⌫"
+                android:textSize="18sp"
+                android:textColor="#a1a1aa"
+                android:gravity="center"
+                android:background="@drawable/key_bg"
+                android:layout_marginStart="3dp" />
+        </LinearLayout>
+
+        <!-- Row 4: Symbols Space Enter -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/keySymbols"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="123"
+                android:textSize="12sp"
+                android:textColor="#a1a1aa"
+                android:gravity="center"
+                android:background="@drawable/key_bg"
+                android:layout_marginEnd="3dp" />
+            <TextView android:id="@+id/keySpace"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="space"
+                android:textSize="13sp"
+                android:textColor="#71717a"
+                android:gravity="center"
+                android:background="@drawable/key_bg"
+                android:layout_marginEnd="3dp" />
+            <TextView android:id="@+id/keyEnter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="↵"
+                android:textSize="18sp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:background="@drawable/chip_bg" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
