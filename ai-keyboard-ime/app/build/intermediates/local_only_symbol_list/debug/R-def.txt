@@ -71,6 +71,8 @@ id wordSuggestionsContainer
 layout activity_main
 layout keyboard_view
 string app_name
+string fleksy_api_key
+string fleksy_secret_key
 string ime_label
 style ChipStyle
 style KeyStyle

@@ -10,8 +10,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // Fleksy SDK repository
+        // Fleksy SDK repository - trying alternative URLs
         maven { url 'https://maven.fleksy.com/' }
+        maven { url 'https://repo.fleksy.com/' }
+        maven { url 'https://jitpack.io' } // Alternative if Fleksy uses JitPack
     }
 }
 rootProject.name = "AI Keyboard"

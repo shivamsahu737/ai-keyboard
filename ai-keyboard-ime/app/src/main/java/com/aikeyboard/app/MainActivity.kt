@@ -43,9 +43,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.statusText.text = if (isEnabled) {
-            "✅ AI Keyboard is enabled"
+            "✅ Fleksy AI Keyboard is enabled"
         } else {
-            "⚠️ AI Keyboard is not enabled yet"
+            "⚠️ Fleksy AI Keyboard is not enabled yet"
         }
     }
 }

@@ -114,16 +114,16 @@ category#android.intent.category.LAUNCHER
 ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:19:17-77
 	android:name
 		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:19:27-74
-service#com.aikeyboard.app.ime.AIKeyboardService
+service#com.aikeyboard.app.fleksy.FleksyKeyboardService
 ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:23:9-34:19
 	android:label
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:25:13-40
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:25:13-47
 	android:exported
 		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:27:13-36
 	android:permission
 		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:26:13-70
 	android:name
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:24:13-50
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:24:13-57
 intent-filter#action:name:android.view.InputMethod
 ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:28:13-30:29
 action#android.view.InputMethod

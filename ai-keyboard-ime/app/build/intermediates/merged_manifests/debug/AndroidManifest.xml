@@ -37,9 +37,9 @@
         </activity>
 
         <service
-            android:name="com.aikeyboard.app.ime.AIKeyboardService"
+            android:name="com.aikeyboard.app.fleksy.FleksyKeyboardService"
             android:exported="true"
-            android:label="AI Keyboard"
+            android:label="Fleksy AI Keyboard"
             android:permission="android.permission.BIND_INPUT_METHOD" >
             <intent-filter>
                 <action android:name="android.view.InputMethod" />

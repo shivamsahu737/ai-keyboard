@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AI Keyboard"
+        android:text="Fleksy AI Keyboard"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="#fafafa"
@@ -26,7 +26,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="100% offline AI — fix grammar, rewrite tone"
+        android:text="Powered by Fleksy SDK — advanced AI typing experience"
         android:textSize="14sp"
         android:textColor="#71717a"
         android:gravity="center"
@@ -45,7 +45,7 @@
         android:id="@+id/btnEnableKeyboard"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:text="Enable AI Keyboard in Settings"
+        android:text="Enable Fleksy AI Keyboard in Settings"
         android:backgroundTint="#6366f1"
         android:textColor="#ffffff"
         android:layout_marginBottom="12dp" />
@@ -54,7 +54,7 @@
         android:id="@+id/btnSwitchKeyboard"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:text="Switch to AI Keyboard"
+        android:text="Switch to Fleksy AI Keyboard"
         android:backgroundTint="#2d2d4e"
         android:textColor="#ffffff" />
 

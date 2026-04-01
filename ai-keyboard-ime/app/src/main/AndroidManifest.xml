@@ -21,8 +21,8 @@
         </activity>
 
         <service
-            android:name=".ime.AIKeyboardService"
-            android:label="AI Keyboard"
+            android:name=".fleksy.FleksyKeyboardService"
+            android:label="Fleksy AI Keyboard"
             android:permission="android.permission.BIND_INPUT_METHOD"
             android:exported="true">
             <intent-filter>

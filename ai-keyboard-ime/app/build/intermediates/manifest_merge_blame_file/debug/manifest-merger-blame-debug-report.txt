@@ -63,12 +63,12 @@
 38
 39        <service
 39-->/workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:23:9-34:19
-40            android:name="com.aikeyboard.app.ime.AIKeyboardService"
-40-->/workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:24:13-50
+40            android:name="com.aikeyboard.app.fleksy.FleksyKeyboardService"
+40-->/workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:24:13-57
 41            android:exported="true"
 41-->/workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:27:13-36
-42            android:label="AI Keyboard"
-42-->/workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:25:13-40
+42            android:label="Fleksy AI Keyboard"
+42-->/workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:25:13-47
 43            android:permission="android.permission.BIND_INPUT_METHOD" >
 43-->/workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:26:13-70
 44            <intent-filter>
