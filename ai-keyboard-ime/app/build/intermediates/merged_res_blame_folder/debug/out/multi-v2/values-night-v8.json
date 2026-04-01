@@ -4,7 +4,7 @@
             "outputFile": "com.aikeyboard.app-mergeDebugResources-29:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/codespace/.gradle/caches/transforms-4/d1567f5b5f851be62d54af736657980c/transformed/appcompat-1.7.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/home/codespace/.gradle/caches/8.12/transforms/552c8788b694f95313dea3115e9a5e9e/transformed/appcompat-1.7.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/codespace/.gradle/caches/transforms-4/1d59f33464d9f3a3f2174c71ae3c0119/transformed/material-1.12.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/home/codespace/.gradle/caches/8.12/transforms/25e6cbc40346b96b7b4c0896d9d700a4/transformed/material-1.12.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

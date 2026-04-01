@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#1a1a2e">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⌨️"
+        android:textSize="64sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AI Keyboard"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#fafafa"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100% offline AI — fix grammar, rewrite tone"
+        android:textSize="14sp"
+        android:textColor="#71717a"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Checking status..."
+        android:textSize="15sp"
+        android:textColor="#fafafa"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/btnEnableKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Enable AI Keyboard in Settings"
+        android:backgroundTint="#6366f1"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnSwitchKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Switch to AI Keyboard"
+        android:backgroundTint="#2d2d4e"
+        android:textColor="#ffffff" />
+
+</LinearLayout>

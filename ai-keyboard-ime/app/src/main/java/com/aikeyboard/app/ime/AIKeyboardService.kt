@@ -20,6 +20,8 @@ import com.aikeyboard.app.cache.ResultCache
 import com.aikeyboard.app.databinding.KeyboardViewBinding
 import com.aikeyboard.app.inference.AITask
 import com.aikeyboard.app.fleksy.FleksyIntegration
+import com.aikeyboard.app.inference.SimulatedInference
+import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

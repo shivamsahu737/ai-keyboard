@@ -4,7 +4,7 @@
             "outputFile": "com.aikeyboard.app-mergeDebugResources-29:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/home/codespace/.gradle/caches/transforms-4/d1567f5b5f851be62d54af736657980c/transformed/appcompat-1.7.0/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "/home/codespace/.gradle/caches/8.12/transforms/552c8788b694f95313dea3115e9a5e9e/transformed/appcompat-1.7.0/res/values-watch-v21/values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

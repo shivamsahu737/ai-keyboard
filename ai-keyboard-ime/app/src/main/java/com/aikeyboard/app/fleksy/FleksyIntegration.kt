@@ -2,16 +2,16 @@ package com.aikeyboard.app.fleksy
 
 import android.content.Context
 import android.view.View
-import com.fleksy.sdk.FleksyKeyboard
-import com.fleksy.sdk.FleksyKeyboardListener
+// import com.fleksy.sdk.FleksyKeyboard
+// import com.fleksy.sdk.FleksyKeyboardListener
 
 /**
  * Fleksy Keyboard Integration
- * TODO: Update with actual Fleksy SDK classes and methods once SDK is added
+ * TODO: Uncomment and update with actual Fleksy SDK classes once SDK is added
  */
 class FleksyIntegration(private val context: Context) {
 
-    private var fleksyKeyboard: FleksyKeyboard? = null
+    // private var fleksyKeyboard: FleksyKeyboard? = null
 
     fun initialize(apiKey: String) {
         // TODO: Initialize Fleksy with API key
@@ -26,7 +26,7 @@ class FleksyIntegration(private val context: Context) {
         return null
     }
 
-    fun setListener(listener: FleksyKeyboardListener) {
+    fun setListener(listener: Any) { // FleksyKeyboardListener
         // TODO: Set keyboard listener
         // fleksyKeyboard?.setListener(listener)
     }
@@ -44,6 +44,6 @@ class FleksyIntegration(private val context: Context) {
     fun destroy() {
         // TODO: Clean up resources
         // fleksyKeyboard?.destroy()
-        fleksyKeyboard = null
+        // fleksyKeyboard = null
     }
 }
