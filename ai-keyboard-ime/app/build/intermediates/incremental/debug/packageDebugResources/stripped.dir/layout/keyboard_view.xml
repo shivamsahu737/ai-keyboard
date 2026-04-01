@@ -30,6 +30,16 @@
         </HorizontalScrollView>
 
         <TextView
+            android:id="@+id/btnTheme"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:text="🎨"
+            android:textSize="20sp"
+            android:textColor="#6366f1"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+
+        <TextView
             android:id="@+id/btnAiStar"
             android:layout_width="44dp"
             android:layout_height="44dp"
@@ -63,6 +73,15 @@
         <TextView android:id="@+id/chipPolite"
             style="@style/ChipStyle"
             android:text="🙏 Polite" />
+        <TextView android:id="@+id/chipEmoji"
+            style="@style/ChipStyle"
+            android:text="😀 Emoji" />
+        <TextView android:id="@+id/chipShorten"
+            style="@style/ChipStyle"
+            android:text="📝 Short" />
+        <TextView android:id="@+id/chipExpand"
+            style="@style/ChipStyle"
+            android:text="🔍 Expand" />
         <TextView android:id="@+id/btnExitChips"
             android:layout_width="32dp"
             android:layout_height="32dp"
@@ -222,7 +241,7 @@
                 android:layout_marginStart="3dp" />
         </LinearLayout>
 
-        <!-- Row 4: Clipboard Symbols Space Enter -->
+        <!-- Row 4: Clipboard Symbols Space Enter Mic -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -230,7 +249,7 @@
             <TextView android:id="@+id/keyClipboard"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.5"
+                android:layout_weight="1.2"
                 android:text="📋"
                 android:textSize="16sp"
                 android:textColor="#a1a1aa"
@@ -240,7 +259,7 @@
             <TextView android:id="@+id/keySymbols"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.5"
+                android:layout_weight="1.2"
                 android:text="123"
                 android:textSize="12sp"
                 android:textColor="#a1a1aa"
@@ -250,7 +269,7 @@
             <TextView android:id="@+id/keySpace"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5"
+                android:layout_weight="4"
                 android:text="space"
                 android:textSize="13sp"
                 android:textColor="#71717a"
@@ -260,12 +279,22 @@
             <TextView android:id="@+id/keyEnter"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="1.8"
                 android:text="↵"
                 android:textSize="18sp"
                 android:textColor="#ffffff"
                 android:gravity="center"
                 android:background="@drawable/chip_bg" />
+            <TextView android:id="@+id/keyMic"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:text="🎤"
+                android:textSize="16sp"
+                android:textColor="#a1a1aa"
+                android:gravity="center"
+                android:background="@drawable/key_bg"
+                android:layout_marginStart="3dp" />
         </LinearLayout>
 
     </LinearLayout>

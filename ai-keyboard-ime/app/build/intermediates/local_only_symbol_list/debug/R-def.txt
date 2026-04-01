@@ -13,10 +13,14 @@ id btnExitChips
 id btnReject
 id btnResultBack
 id btnSwitchKeyboard
+id btnTheme
 id chipCasual
+id chipEmoji
+id chipExpand
 id chipGrammar
 id chipPolite
 id chipProfessional
+id chipShorten
 id key0
 id key1
 id key2
@@ -43,6 +47,7 @@ id keyJ
 id keyK
 id keyL
 id keyM
+id keyMic
 id keyN
 id keyO
 id keyP

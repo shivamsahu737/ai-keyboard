@@ -44,7 +44,16 @@ public final class KeyboardViewBinding implements ViewBinding {
   public final TextView btnResultBack;
 
   @NonNull
+  public final TextView btnTheme;
+
+  @NonNull
   public final TextView chipCasual;
+
+  @NonNull
+  public final TextView chipEmoji;
+
+  @NonNull
+  public final TextView chipExpand;
 
   @NonNull
   public final TextView chipGrammar;
@@ -54,6 +63,9 @@ public final class KeyboardViewBinding implements ViewBinding {
 
   @NonNull
   public final TextView chipProfessional;
+
+  @NonNull
+  public final TextView chipShorten;
 
   @NonNull
   public final TextView key0;
@@ -134,6 +146,9 @@ public final class KeyboardViewBinding implements ViewBinding {
   public final TextView keyM;
 
   @NonNull
+  public final TextView keyMic;
+
+  @NonNull
   public final TextView keyN;
 
   @NonNull
@@ -193,23 +208,25 @@ public final class KeyboardViewBinding implements ViewBinding {
   private KeyboardViewBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout barChips,
       @NonNull LinearLayout barDefault, @NonNull LinearLayout barResult,
       @NonNull TextView btnAccept, @NonNull TextView btnAiStar, @NonNull TextView btnExitChips,
-      @NonNull TextView btnReject, @NonNull TextView btnResultBack, @NonNull TextView chipCasual,
+      @NonNull TextView btnReject, @NonNull TextView btnResultBack, @NonNull TextView btnTheme,
+      @NonNull TextView chipCasual, @NonNull TextView chipEmoji, @NonNull TextView chipExpand,
       @NonNull TextView chipGrammar, @NonNull TextView chipPolite,
-      @NonNull TextView chipProfessional, @NonNull TextView key0, @NonNull TextView key1,
-      @NonNull TextView key2, @NonNull TextView key3, @NonNull TextView key4,
-      @NonNull TextView key5, @NonNull TextView key6, @NonNull TextView key7,
-      @NonNull TextView key8, @NonNull TextView key9, @NonNull TextView keyA,
-      @NonNull TextView keyB, @NonNull TextView keyBackspace, @NonNull TextView keyC,
-      @NonNull TextView keyClipboard, @NonNull TextView keyD, @NonNull TextView keyE,
-      @NonNull TextView keyEnter, @NonNull TextView keyF, @NonNull TextView keyG,
-      @NonNull TextView keyH, @NonNull TextView keyI, @NonNull TextView keyJ,
-      @NonNull TextView keyK, @NonNull TextView keyL, @NonNull TextView keyM,
-      @NonNull TextView keyN, @NonNull TextView keyO, @NonNull TextView keyP,
-      @NonNull TextView keyQ, @NonNull TextView keyR, @NonNull TextView keyS,
-      @NonNull TextView keyShift, @NonNull TextView keySpace, @NonNull TextView keySymbols,
-      @NonNull TextView keyT, @NonNull TextView keyU, @NonNull TextView keyV,
-      @NonNull TextView keyW, @NonNull TextView keyX, @NonNull TextView keyY,
-      @NonNull TextView keyZ, @NonNull LinearLayout keyboardRows, @NonNull TextView resultText,
+      @NonNull TextView chipProfessional, @NonNull TextView chipShorten, @NonNull TextView key0,
+      @NonNull TextView key1, @NonNull TextView key2, @NonNull TextView key3,
+      @NonNull TextView key4, @NonNull TextView key5, @NonNull TextView key6,
+      @NonNull TextView key7, @NonNull TextView key8, @NonNull TextView key9,
+      @NonNull TextView keyA, @NonNull TextView keyB, @NonNull TextView keyBackspace,
+      @NonNull TextView keyC, @NonNull TextView keyClipboard, @NonNull TextView keyD,
+      @NonNull TextView keyE, @NonNull TextView keyEnter, @NonNull TextView keyF,
+      @NonNull TextView keyG, @NonNull TextView keyH, @NonNull TextView keyI,
+      @NonNull TextView keyJ, @NonNull TextView keyK, @NonNull TextView keyL,
+      @NonNull TextView keyM, @NonNull TextView keyMic, @NonNull TextView keyN,
+      @NonNull TextView keyO, @NonNull TextView keyP, @NonNull TextView keyQ,
+      @NonNull TextView keyR, @NonNull TextView keyS, @NonNull TextView keyShift,
+      @NonNull TextView keySpace, @NonNull TextView keySymbols, @NonNull TextView keyT,
+      @NonNull TextView keyU, @NonNull TextView keyV, @NonNull TextView keyW,
+      @NonNull TextView keyX, @NonNull TextView keyY, @NonNull TextView keyZ,
+      @NonNull LinearLayout keyboardRows, @NonNull TextView resultText,
       @NonNull LinearLayout wordSuggestionsContainer) {
     this.rootView = rootView;
     this.barChips = barChips;
@@ -220,10 +237,14 @@ public final class KeyboardViewBinding implements ViewBinding {
     this.btnExitChips = btnExitChips;
     this.btnReject = btnReject;
     this.btnResultBack = btnResultBack;
+    this.btnTheme = btnTheme;
     this.chipCasual = chipCasual;
+    this.chipEmoji = chipEmoji;
+    this.chipExpand = chipExpand;
     this.chipGrammar = chipGrammar;
     this.chipPolite = chipPolite;
     this.chipProfessional = chipProfessional;
+    this.chipShorten = chipShorten;
     this.key0 = key0;
     this.key1 = key1;
     this.key2 = key2;
@@ -250,6 +271,7 @@ public final class KeyboardViewBinding implements ViewBinding {
     this.keyK = keyK;
     this.keyL = keyL;
     this.keyM = keyM;
+    this.keyMic = keyMic;
     this.keyN = keyN;
     this.keyO = keyO;
     this.keyP = keyP;
@@ -346,9 +368,27 @@ public final class KeyboardViewBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnTheme;
+      TextView btnTheme = ViewBindings.findChildViewById(rootView, id);
+      if (btnTheme == null) {
+        break missingId;
+      }
+
       id = R.id.chipCasual;
       TextView chipCasual = ViewBindings.findChildViewById(rootView, id);
       if (chipCasual == null) {
+        break missingId;
+      }
+
+      id = R.id.chipEmoji;
+      TextView chipEmoji = ViewBindings.findChildViewById(rootView, id);
+      if (chipEmoji == null) {
+        break missingId;
+      }
+
+      id = R.id.chipExpand;
+      TextView chipExpand = ViewBindings.findChildViewById(rootView, id);
+      if (chipExpand == null) {
         break missingId;
       }
 
@@ -367,6 +407,12 @@ public final class KeyboardViewBinding implements ViewBinding {
       id = R.id.chipProfessional;
       TextView chipProfessional = ViewBindings.findChildViewById(rootView, id);
       if (chipProfessional == null) {
+        break missingId;
+      }
+
+      id = R.id.chipShorten;
+      TextView chipShorten = ViewBindings.findChildViewById(rootView, id);
+      if (chipShorten == null) {
         break missingId;
       }
 
@@ -526,6 +572,12 @@ public final class KeyboardViewBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.keyMic;
+      TextView keyMic = ViewBindings.findChildViewById(rootView, id);
+      if (keyMic == null) {
+        break missingId;
+      }
+
       id = R.id.keyN;
       TextView keyN = ViewBindings.findChildViewById(rootView, id);
       if (keyN == null) {
@@ -641,12 +693,12 @@ public final class KeyboardViewBinding implements ViewBinding {
       }
 
       return new KeyboardViewBinding((LinearLayout) rootView, barChips, barDefault, barResult,
-          btnAccept, btnAiStar, btnExitChips, btnReject, btnResultBack, chipCasual, chipGrammar,
-          chipPolite, chipProfessional, key0, key1, key2, key3, key4, key5, key6, key7, key8, key9,
-          keyA, keyB, keyBackspace, keyC, keyClipboard, keyD, keyE, keyEnter, keyF, keyG, keyH,
-          keyI, keyJ, keyK, keyL, keyM, keyN, keyO, keyP, keyQ, keyR, keyS, keyShift, keySpace,
-          keySymbols, keyT, keyU, keyV, keyW, keyX, keyY, keyZ, keyboardRows, resultText,
-          wordSuggestionsContainer);
+          btnAccept, btnAiStar, btnExitChips, btnReject, btnResultBack, btnTheme, chipCasual,
+          chipEmoji, chipExpand, chipGrammar, chipPolite, chipProfessional, chipShorten, key0, key1,
+          key2, key3, key4, key5, key6, key7, key8, key9, keyA, keyB, keyBackspace, keyC,
+          keyClipboard, keyD, keyE, keyEnter, keyF, keyG, keyH, keyI, keyJ, keyK, keyL, keyM,
+          keyMic, keyN, keyO, keyP, keyQ, keyR, keyS, keyShift, keySpace, keySymbols, keyT, keyU,
+          keyV, keyW, keyX, keyY, keyZ, keyboardRows, resultText, wordSuggestionsContainer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

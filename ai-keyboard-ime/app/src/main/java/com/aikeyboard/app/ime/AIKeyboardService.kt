@@ -183,16 +183,25 @@ class AIKeyboardService : InputMethodService() {
             vibrate()
         }
 
-        binding.keyClipboard.setOnClickListener {
+        binding.keyMic.setOnClickListener {
             vibrate()
-            val clipboard = getSystemService(CLIPBOARD_SERVICE) as? ClipboardManager
-            val clip = clipboard?.primaryClip
-            if (clip != null && clip.itemCount > 0) {
-                val text = clip.getItemAt(0).text?.toString()
-                if (!text.isNullOrEmpty()) {
-                    currentInputConnection?.commitText(text, 1)
-                }
+            // TODO: Implement voice input
+            currentInputConnection?.commitText("[Voice input not implemented]", 1)
+        }
+
+        // Theme button
+        binding.btnTheme.setOnClickListener {
+            vibrate()
+            // Cycle themes (dummy)
+            // For now, just change background color
+            val root = binding.root
+            val currentBg = (root.background as? android.graphics.drawable.ColorDrawable)?.color ?: 0xFF1a1a2e.toInt()
+            val newBg = when (currentBg) {
+                0xFF1a1a2e.toInt() -> 0xFF2d1b69.toInt() // Dark purple
+                0xFF2d1b69.toInt() -> 0xFF0f0f23.toInt() // Darker
+                else -> 0xFF1a1a2e.toInt() // Back to default
             }
+            root.setBackgroundColor(newBg)
         }
     }
 
@@ -225,6 +234,9 @@ class AIKeyboardService : InputMethodService() {
         binding.chipProfessional.setOnClickListener { vibrate(); triggerAI(AITask.PROFESSIONAL) }
         binding.chipCasual.setOnClickListener { vibrate(); triggerAI(AITask.CASUAL) }
         binding.chipPolite.setOnClickListener { vibrate(); triggerAI(AITask.POLITE) }
+        binding.chipEmoji.setOnClickListener { vibrate(); triggerAI(AITask.EMOJI) }
+        binding.chipShorten.setOnClickListener { vibrate(); triggerAI(AITask.SHORTEN) }
+        binding.chipExpand.setOnClickListener { vibrate(); triggerAI(AITask.EXPAND) }
 
         // Result bar buttons
         binding.btnAccept.setOnClickListener {
@@ -318,14 +330,20 @@ class AIKeyboardService : InputMethodService() {
                 binding.chipGrammar,
                 binding.chipProfessional,
                 binding.chipCasual,
-                binding.chipPolite
+                binding.chipPolite,
+                binding.chipEmoji,
+                binding.chipShorten,
+                binding.chipExpand
             ).forEach { it.alpha = 0.4f }
         } else {
             listOf(
                 binding.chipGrammar,
                 binding.chipProfessional,
                 binding.chipCasual,
-                binding.chipPolite
+                binding.chipPolite,
+                binding.chipEmoji,
+                binding.chipShorten,
+                binding.chipExpand
             ).forEach { it.alpha = 1.0f }
         }
     }

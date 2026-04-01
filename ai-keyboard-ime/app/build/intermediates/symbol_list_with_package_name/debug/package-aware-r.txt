@@ -3203,6 +3203,7 @@ id btnExitChips
 id btnReject
 id btnResultBack
 id btnSwitchKeyboard
+id btnTheme
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3219,9 +3220,12 @@ id chains
 id checkbox
 id checked
 id chipCasual
+id chipEmoji
+id chipExpand
 id chipGrammar
 id chipPolite
 id chipProfessional
+id chipShorten
 id chronometer
 id circle_center
 id clear_text
@@ -3366,6 +3370,7 @@ id keyJ
 id keyK
 id keyL
 id keyM
+id keyMic
 id keyN
 id keyO
 id keyP
