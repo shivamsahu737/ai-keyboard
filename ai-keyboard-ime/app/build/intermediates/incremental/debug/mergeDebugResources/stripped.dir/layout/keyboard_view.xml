@@ -46,7 +46,8 @@
             android:text="★"
             android:textSize="22sp"
             android:textColor="#6366f1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless" />
     </LinearLayout>
 
     <!-- STATE 2: AI chip row -->
