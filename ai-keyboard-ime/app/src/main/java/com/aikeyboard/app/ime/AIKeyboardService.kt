@@ -2,9 +2,14 @@ package com.aikeyboard.app.ime
 
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Intent
 import android.graphics.Color
 import android.inputmethodservice.InputMethodService
+import android.os.Bundle
 import android.os.Vibrator
+import android.speech.RecognitionListener
+import android.speech.RecognizerIntent
+import android.speech.SpeechRecognizer
 import android.view.Gravity
 import android.view.KeyEvent
 import android.view.MotionEvent
@@ -30,6 +35,7 @@ class AIKeyboardService : InputMethodService() {
     private var isShifted = false
     private var lastAcceptedText: String? = null
     private var currentInputBeforeAI: String = ""
+    private var speechRecognizer: SpeechRecognizer? = null
 
     // Bar state machine
     private enum class BarState { DEFAULT, CHIPS, LOADING, RESULT }
@@ -185,8 +191,7 @@ class AIKeyboardService : InputMethodService() {
 
         binding.keyMic.setOnClickListener {
             vibrate()
-            // TODO: Implement voice input
-            currentInputConnection?.commitText("[Voice input not implemented]", 1)
+            startVoiceInput()
         }
 
         // Theme button
@@ -364,6 +369,62 @@ class AIKeyboardService : InputMethodService() {
             }
         } catch (e: Exception) {
             // Ignore vibration errors
+        }
+    }
+
+    private fun startVoiceInput() {
+        try {
+            if (speechRecognizer == null) {
+                speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
+                speechRecognizer?.setRecognitionListener(object : RecognitionListener {
+                    override fun onReadyForSpeech(params: Bundle?) {
+                        // Show listening indicator
+                        binding.keyMic.text = "🎙️"
+                    }
+
+                    override fun onBeginningOfSpeech() {}
+
+                    override fun onRmsChanged(rmsdB: Float) {}
+
+                    override fun onBufferReceived(buffer: ByteArray?) {}
+
+                    override fun onEndOfSpeech() {
+                        binding.keyMic.text = "🎤"
+                    }
+
+                    override fun onError(error: Int) {
+                        binding.keyMic.text = "🎤"
+                        val errorMsg = when (error) {
+                            SpeechRecognizer.ERROR_NO_MATCH -> "No speech detected"
+                            SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "Speech timeout"
+                            else -> "Voice recognition error"
+                        }
+                        currentInputConnection?.commitText("[$errorMsg]", 1)
+                    }
+
+                    override fun onResults(results: Bundle?) {
+                        binding.keyMic.text = "🎤"
+                        val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                        matches?.firstOrNull()?.let { recognizedText ->
+                            currentInputConnection?.commitText(recognizedText, 1)
+                        }
+                    }
+
+                    override fun onPartialResults(partialResults: Bundle?) {}
+
+                    override fun onEvent(eventType: Int, params: Bundle?) {}
+                })
+            }
+
+            val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+                putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1)
+                putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak now...")
+            }
+
+            speechRecognizer?.startListening(intent)
+        } catch (e: Exception) {
+            currentInputConnection?.commitText("[Voice input failed: ${e.message}]", 1)
         }
     }
 

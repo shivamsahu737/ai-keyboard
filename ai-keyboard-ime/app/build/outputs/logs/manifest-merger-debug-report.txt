@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:2:1-37:12
-INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:2:1-37:12
-INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:2:1-37:12
-INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:2:1-37:12
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:2:1-38:12
 MERGED from [androidx.databinding:viewbinding:8.2.2] /home/codespace/.gradle/caches/transforms-4/1600b31f0804a18085dd4f45db1b4d7a/transformed/viewbinding-8.2.2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.12.0] /home/codespace/.gradle/caches/transforms-4/1d59f33464d9f3a3f2174c71ae3c0119/transformed/material-1.12.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/codespace/.gradle/caches/transforms-4/be4dc68fcf2858ee42805088eec23de7/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
@@ -63,9 +63,13 @@ uses-permission#android.permission.INTERNET
 ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
 		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:6:5-71
+	android:name
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:6:22-68
 application
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:7:5-35:19
-INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:7:5-35:19
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:8:5-36:19
+INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:8:5-36:19
 MERGED from [com.google.android.material:material:1.12.0] /home/codespace/.gradle/caches/transforms-4/1d59f33464d9f3a3f2174c71ae3c0119/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] /home/codespace/.gradle/caches/transforms-4/1d59f33464d9f3a3f2174c71ae3c0119/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/codespace/.gradle/caches/transforms-4/be4dc68fcf2858ee42805088eec23de7/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -87,51 +91,51 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/codespace/.gradle/cac
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] /home/codespace/.gradle/caches/transforms-4/c32d182034cfed5e080391512bbea16f/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:9:9-36
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:10:9-36
 	android:allowBackup
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:10:9-48
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:11:9-48
 activity#com.aikeyboard.app.MainActivity
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:12:9-20:20
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:13:9-21:20
 	android:windowSoftInputMode
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:15:13-54
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:16:13-54
 	android:exported
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:14:13-36
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:15:13-36
 	android:name
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:13:13-41
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:14:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:16:13-19:29
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:17:13-20:29
 action#android.intent.action.MAIN
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:17:17-69
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:17:25-66
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:18:17-77
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:18:27-74
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:19:27-74
 service#com.aikeyboard.app.ime.AIKeyboardService
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:22:9-33:19
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:23:9-34:19
 	android:label
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:24:13-40
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:25:13-40
 	android:exported
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:26:13-36
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:27:13-36
 	android:permission
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:25:13-70
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:26:13-70
 	android:name
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:23:13-50
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:24:13-50
 intent-filter#action:name:android.view.InputMethod
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:27:13-29:29
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:28:13-30:29
 action#android.view.InputMethod
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:28:17-67
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:29:17-67
 	android:name
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:28:25-64
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:29:25-64
 meta-data#android.view.im
-ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:30:13-32:50
+ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:31:13-33:50
 	android:resource
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:32:17-47
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:33:17-47
 	android:name
-		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:31:17-47
+		ADDED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml:32:17-47
 uses-sdk
 INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /workspaces/codespaces-blank/ai-keyboard-ime/app/src/main/AndroidManifest.xml

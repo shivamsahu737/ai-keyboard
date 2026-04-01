@@ -10,6 +10,7 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <permission
         android:name="com.aikeyboard.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
