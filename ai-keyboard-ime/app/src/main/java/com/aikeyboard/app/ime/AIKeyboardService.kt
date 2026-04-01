@@ -19,8 +19,7 @@ import androidx.core.view.isVisible
 import com.aikeyboard.app.cache.ResultCache
 import com.aikeyboard.app.databinding.KeyboardViewBinding
 import com.aikeyboard.app.inference.AITask
-import com.aikeyboard.app.inference.SimulatedInference
-import com.tencent.mmkv.MMKV
+import com.aikeyboard.app.fleksy.FleksyIntegration
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -37,6 +36,10 @@ class AIKeyboardService : InputMethodService() {
     private var currentInputBeforeAI: String = ""
     private var speechRecognizer: SpeechRecognizer? = null
 
+    // Fleksy integration
+    private var fleksyIntegration: FleksyIntegration? = null
+    private var useFleksyKeyboard = false // TODO: Set to true to use Fleksy keyboard instead of custom AI keyboard
+
     // Bar state machine
     private enum class BarState { DEFAULT, CHIPS, LOADING, RESULT }
     private var barState = BarState.DEFAULT
@@ -48,6 +51,21 @@ class AIKeyboardService : InputMethodService() {
 
     override fun onCreateInputView(): View {
         return try {
+            if (useFleksyKeyboard) {
+                // Use Fleksy keyboard
+                fleksyIntegration = FleksyIntegration(this)
+                // TODO: Initialize with API key from resources or configuration
+                fleksyIntegration?.initialize("YOUR_FLEKSY_API_KEY")
+                val fleksyView = fleksyIntegration?.createKeyboardView()
+                if (fleksyView != null) {
+                    return fleksyView
+                } else {
+                    // Fallback to custom keyboard if Fleksy fails
+                    useFleksyKeyboard = false
+                }
+            }
+
+            // Use custom AI keyboard
             binding = KeyboardViewBinding.inflate(layoutInflater)
             setupKeys()
             setupAIBar()
@@ -431,5 +449,7 @@ class AIKeyboardService : InputMethodService() {
     override fun onDestroy() {
         super.onDestroy()
         scope.cancel()
+        speechRecognizer?.destroy()
+        fleksyIntegration?.destroy()
     }
 }

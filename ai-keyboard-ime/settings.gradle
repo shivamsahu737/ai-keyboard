@@ -10,6 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // Fleksy SDK repository
+        maven { url 'https://maven.fleksy.com/' }
     }
 }
 rootProject.name = "AI Keyboard"
