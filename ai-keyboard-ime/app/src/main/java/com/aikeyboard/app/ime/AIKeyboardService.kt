@@ -1,9 +1,13 @@
 package com.aikeyboard.app.ime
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.graphics.Color
 import android.inputmethodservice.InputMethodService
 import android.os.Vibrator
 import android.view.Gravity
+import android.view.KeyEvent
+import android.view.MotionEvent
 import android.view.View
 import android.widget.TextView
 import androidx.core.view.isVisible
@@ -57,33 +61,89 @@ class AIKeyboardService : InputMethodService() {
     // ── KEY SETUP ────────────────────────────────────────────────────────────
 
     private fun setupKeys() {
-        val letterKeys = mapOf(
-            binding.keyQ to "q", binding.keyW to "w", binding.keyE to "e",
-            binding.keyR to "r", binding.keyT to "t", binding.keyY to "y",
-            binding.keyU to "u", binding.keyI to "i", binding.keyO to "o",
-            binding.keyP to "p", binding.keyA to "a", binding.keyS to "s",
-            binding.keyD to "d", binding.keyF to "f", binding.keyG to "g",
-            binding.keyH to "h", binding.keyJ to "j", binding.keyK to "k",
-            binding.keyL to "l", binding.keyZ to "z", binding.keyX to "x",
-            binding.keyC to "c", binding.keyV to "v", binding.keyB to "b",
-            binding.keyN to "n", binding.keyM to "m"
+        // Number keys
+        val numberKeys = mapOf(
+            binding.key1 to "1", binding.key2 to "2", binding.key3 to "3",
+            binding.key4 to "4", binding.key5 to "5", binding.key6 to "6",
+            binding.key7 to "7", binding.key8 to "8", binding.key9 to "9",
+            binding.key0 to "0"
         )
-
-        letterKeys.forEach { (view, char) ->
+        numberKeys.forEach { (view, char) ->
             view.setOnClickListener {
                 vibrate()
-                val toInsert = if (isShifted) char.uppercase() else char
+                currentInputConnection?.commitText(char, 1)
+            }
+        }
+
+        // Letter keys with long-press symbols
+        val letterKeys = mapOf(
+            binding.keyQ to Pair("q", "@"), binding.keyW to Pair("w", "#"),
+            binding.keyE to Pair("e", "$"), binding.keyR to Pair("r", "%"),
+            binding.keyT to Pair("t", "&"), binding.keyY to Pair("y", "*"),
+            binding.keyU to Pair("u", "-"), binding.keyI to Pair("i", "+"),
+            binding.keyO to Pair("o", "("), binding.keyP to Pair("p", ")"),
+            binding.keyA to Pair("a", "!"), binding.keyS to Pair("s", "\""),
+            binding.keyD to Pair("d", "'"), binding.keyF to Pair("f", ":"),
+            binding.keyG to Pair("g", ";"), binding.keyH to Pair("h", "/"),
+            binding.keyJ to Pair("j", "?"), binding.keyK to Pair("k", "["),
+            binding.keyL to Pair("l", "]"), binding.keyZ to Pair("z", "_"),
+            binding.keyX to Pair("x", ","), binding.keyC to Pair("c", "."),
+            binding.keyV to Pair("v", "<"), binding.keyB to Pair("b", ">"),
+            binding.keyN to Pair("n", "{"), binding.keyM to Pair("m", "}")
+        )
+
+        letterKeys.forEach { (view, pair) ->
+            val (letter, symbol) = pair
+            view.setOnClickListener {
+                vibrate()
+                val toInsert = if (isShifted) letter.uppercase() else letter
                 currentInputConnection?.commitText(toInsert, 1)
                 if (isShifted) {
                     isShifted = false
                     updateShiftState()
                 }
             }
+            view.setOnLongClickListener {
+                vibrate()
+                currentInputConnection?.commitText(symbol, 1)
+                true // Consume the event
+            }
         }
 
         binding.keySpace.setOnClickListener {
             vibrate()
             currentInputConnection?.commitText(" ", 1)
+        }
+
+        // Spacebar cursor control
+        binding.keySpace.setOnTouchListener { view, event ->
+            val ic = currentInputConnection ?: return@setOnTouchListener false
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    view.tag = event.x
+                    false
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    val initialX = view.tag as? Float ?: return@setOnTouchListener false
+                    val deltaX = event.x - initialX
+                    val threshold = 30f // pixels per move
+
+                    if (Math.abs(deltaX) > threshold) {
+                        if (deltaX < 0) {
+                            // Move cursor left
+                            ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_LEFT))
+                            ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_LEFT))
+                        } else {
+                            // Move cursor right
+                            ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_RIGHT))
+                            ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_RIGHT))
+                        }
+                        view.tag = event.x // Reset for next move
+                    }
+                    true // Consume to prevent click
+                }
+                else -> false
+            }
         }
 
         binding.keyBackspace.setOnClickListener {
@@ -121,6 +181,18 @@ class AIKeyboardService : InputMethodService() {
         binding.keySymbols.setOnClickListener {
             // TODO Phase 2: switch to symbols layout
             vibrate()
+        }
+
+        binding.keyClipboard.setOnClickListener {
+            vibrate()
+            val clipboard = getSystemService(CLIPBOARD_SERVICE) as? ClipboardManager
+            val clip = clipboard?.primaryClip
+            if (clip != null && clip.itemCount > 0) {
+                val text = clip.getItemAt(0).text?.toString()
+                if (!text.isNullOrEmpty()) {
+                    currentInputConnection?.commitText(text, 1)
+                }
+            }
         }
     }
 

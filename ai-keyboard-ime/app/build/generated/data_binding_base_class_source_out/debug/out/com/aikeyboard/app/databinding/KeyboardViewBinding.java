@@ -56,6 +56,36 @@ public final class KeyboardViewBinding implements ViewBinding {
   public final TextView chipProfessional;
 
   @NonNull
+  public final TextView key0;
+
+  @NonNull
+  public final TextView key1;
+
+  @NonNull
+  public final TextView key2;
+
+  @NonNull
+  public final TextView key3;
+
+  @NonNull
+  public final TextView key4;
+
+  @NonNull
+  public final TextView key5;
+
+  @NonNull
+  public final TextView key6;
+
+  @NonNull
+  public final TextView key7;
+
+  @NonNull
+  public final TextView key8;
+
+  @NonNull
+  public final TextView key9;
+
+  @NonNull
   public final TextView keyA;
 
   @NonNull
@@ -66,6 +96,9 @@ public final class KeyboardViewBinding implements ViewBinding {
 
   @NonNull
   public final TextView keyC;
+
+  @NonNull
+  public final TextView keyClipboard;
 
   @NonNull
   public final TextView keyD;
@@ -162,18 +195,22 @@ public final class KeyboardViewBinding implements ViewBinding {
       @NonNull TextView btnAccept, @NonNull TextView btnAiStar, @NonNull TextView btnExitChips,
       @NonNull TextView btnReject, @NonNull TextView btnResultBack, @NonNull TextView chipCasual,
       @NonNull TextView chipGrammar, @NonNull TextView chipPolite,
-      @NonNull TextView chipProfessional, @NonNull TextView keyA, @NonNull TextView keyB,
-      @NonNull TextView keyBackspace, @NonNull TextView keyC, @NonNull TextView keyD,
-      @NonNull TextView keyE, @NonNull TextView keyEnter, @NonNull TextView keyF,
-      @NonNull TextView keyG, @NonNull TextView keyH, @NonNull TextView keyI,
-      @NonNull TextView keyJ, @NonNull TextView keyK, @NonNull TextView keyL,
-      @NonNull TextView keyM, @NonNull TextView keyN, @NonNull TextView keyO,
-      @NonNull TextView keyP, @NonNull TextView keyQ, @NonNull TextView keyR,
-      @NonNull TextView keyS, @NonNull TextView keyShift, @NonNull TextView keySpace,
-      @NonNull TextView keySymbols, @NonNull TextView keyT, @NonNull TextView keyU,
-      @NonNull TextView keyV, @NonNull TextView keyW, @NonNull TextView keyX,
-      @NonNull TextView keyY, @NonNull TextView keyZ, @NonNull LinearLayout keyboardRows,
-      @NonNull TextView resultText, @NonNull LinearLayout wordSuggestionsContainer) {
+      @NonNull TextView chipProfessional, @NonNull TextView key0, @NonNull TextView key1,
+      @NonNull TextView key2, @NonNull TextView key3, @NonNull TextView key4,
+      @NonNull TextView key5, @NonNull TextView key6, @NonNull TextView key7,
+      @NonNull TextView key8, @NonNull TextView key9, @NonNull TextView keyA,
+      @NonNull TextView keyB, @NonNull TextView keyBackspace, @NonNull TextView keyC,
+      @NonNull TextView keyClipboard, @NonNull TextView keyD, @NonNull TextView keyE,
+      @NonNull TextView keyEnter, @NonNull TextView keyF, @NonNull TextView keyG,
+      @NonNull TextView keyH, @NonNull TextView keyI, @NonNull TextView keyJ,
+      @NonNull TextView keyK, @NonNull TextView keyL, @NonNull TextView keyM,
+      @NonNull TextView keyN, @NonNull TextView keyO, @NonNull TextView keyP,
+      @NonNull TextView keyQ, @NonNull TextView keyR, @NonNull TextView keyS,
+      @NonNull TextView keyShift, @NonNull TextView keySpace, @NonNull TextView keySymbols,
+      @NonNull TextView keyT, @NonNull TextView keyU, @NonNull TextView keyV,
+      @NonNull TextView keyW, @NonNull TextView keyX, @NonNull TextView keyY,
+      @NonNull TextView keyZ, @NonNull LinearLayout keyboardRows, @NonNull TextView resultText,
+      @NonNull LinearLayout wordSuggestionsContainer) {
     this.rootView = rootView;
     this.barChips = barChips;
     this.barDefault = barDefault;
@@ -187,10 +224,21 @@ public final class KeyboardViewBinding implements ViewBinding {
     this.chipGrammar = chipGrammar;
     this.chipPolite = chipPolite;
     this.chipProfessional = chipProfessional;
+    this.key0 = key0;
+    this.key1 = key1;
+    this.key2 = key2;
+    this.key3 = key3;
+    this.key4 = key4;
+    this.key5 = key5;
+    this.key6 = key6;
+    this.key7 = key7;
+    this.key8 = key8;
+    this.key9 = key9;
     this.keyA = keyA;
     this.keyB = keyB;
     this.keyBackspace = keyBackspace;
     this.keyC = keyC;
+    this.keyClipboard = keyClipboard;
     this.keyD = keyD;
     this.keyE = keyE;
     this.keyEnter = keyEnter;
@@ -322,6 +370,66 @@ public final class KeyboardViewBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.key0;
+      TextView key0 = ViewBindings.findChildViewById(rootView, id);
+      if (key0 == null) {
+        break missingId;
+      }
+
+      id = R.id.key1;
+      TextView key1 = ViewBindings.findChildViewById(rootView, id);
+      if (key1 == null) {
+        break missingId;
+      }
+
+      id = R.id.key2;
+      TextView key2 = ViewBindings.findChildViewById(rootView, id);
+      if (key2 == null) {
+        break missingId;
+      }
+
+      id = R.id.key3;
+      TextView key3 = ViewBindings.findChildViewById(rootView, id);
+      if (key3 == null) {
+        break missingId;
+      }
+
+      id = R.id.key4;
+      TextView key4 = ViewBindings.findChildViewById(rootView, id);
+      if (key4 == null) {
+        break missingId;
+      }
+
+      id = R.id.key5;
+      TextView key5 = ViewBindings.findChildViewById(rootView, id);
+      if (key5 == null) {
+        break missingId;
+      }
+
+      id = R.id.key6;
+      TextView key6 = ViewBindings.findChildViewById(rootView, id);
+      if (key6 == null) {
+        break missingId;
+      }
+
+      id = R.id.key7;
+      TextView key7 = ViewBindings.findChildViewById(rootView, id);
+      if (key7 == null) {
+        break missingId;
+      }
+
+      id = R.id.key8;
+      TextView key8 = ViewBindings.findChildViewById(rootView, id);
+      if (key8 == null) {
+        break missingId;
+      }
+
+      id = R.id.key9;
+      TextView key9 = ViewBindings.findChildViewById(rootView, id);
+      if (key9 == null) {
+        break missingId;
+      }
+
       id = R.id.keyA;
       TextView keyA = ViewBindings.findChildViewById(rootView, id);
       if (keyA == null) {
@@ -343,6 +451,12 @@ public final class KeyboardViewBinding implements ViewBinding {
       id = R.id.keyC;
       TextView keyC = ViewBindings.findChildViewById(rootView, id);
       if (keyC == null) {
+        break missingId;
+      }
+
+      id = R.id.keyClipboard;
+      TextView keyClipboard = ViewBindings.findChildViewById(rootView, id);
+      if (keyClipboard == null) {
         break missingId;
       }
 
@@ -528,9 +642,10 @@ public final class KeyboardViewBinding implements ViewBinding {
 
       return new KeyboardViewBinding((LinearLayout) rootView, barChips, barDefault, barResult,
           btnAccept, btnAiStar, btnExitChips, btnReject, btnResultBack, chipCasual, chipGrammar,
-          chipPolite, chipProfessional, keyA, keyB, keyBackspace, keyC, keyD, keyE, keyEnter, keyF,
-          keyG, keyH, keyI, keyJ, keyK, keyL, keyM, keyN, keyO, keyP, keyQ, keyR, keyS, keyShift,
-          keySpace, keySymbols, keyT, keyU, keyV, keyW, keyX, keyY, keyZ, keyboardRows, resultText,
+          chipPolite, chipProfessional, key0, key1, key2, key3, key4, key5, key6, key7, key8, key9,
+          keyA, keyB, keyBackspace, keyC, keyClipboard, keyD, keyE, keyEnter, keyF, keyG, keyH,
+          keyI, keyJ, keyK, keyL, keyM, keyN, keyO, keyP, keyQ, keyR, keyS, keyShift, keySpace,
+          keySymbols, keyT, keyU, keyV, keyW, keyX, keyY, keyZ, keyboardRows, resultText,
           wordSuggestionsContainer);
     }
     String missingId = rootView.getResources().getResourceName(id);

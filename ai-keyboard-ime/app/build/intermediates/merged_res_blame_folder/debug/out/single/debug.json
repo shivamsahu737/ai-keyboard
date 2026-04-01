@@ -16,10 +16,6 @@
         "source": "/home/codespace/.gradle/daemon/8.6-rc-4/com.aikeyboard.app-main-33:/drawable/key_bg.xml"
     },
     {
-        "merged": "com.aikeyboard.app-merged_res-31:/drawable_key_bg.xml.flat",
-        "source": "com.aikeyboard.app-main-33:/drawable/key_bg.xml"
-    },
-    {
         "merged": "/home/codespace/.gradle/daemon/8.6-rc-4/com.aikeyboard.app-merged_res-31:/layout_activity_main.xml.flat",
         "source": "/home/codespace/.gradle/daemon/8.6-rc-4/com.aikeyboard.app-main-33:/layout/activity_main.xml"
     },
